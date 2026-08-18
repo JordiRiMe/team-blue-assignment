@@ -1,0 +1,10 @@
+[project]
+name = "team-blue-assignment"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "pytest>=9.1.1",
+    "ruff>=0.16.3",
+]
