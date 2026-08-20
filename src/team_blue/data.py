@@ -15,11 +15,10 @@ import numpy as np
 import pandas as pd
 
 from team_blue.typing import (
+    ConflictingTargetPolicy,
     DatasetKind,
     InvalidTenurePolicy,
-    ConflictingTargetPolicy,
 )
-
 
 CUSTOMER_ID_COLUMN = "FK_DWH_CUSTOMERS"
 TARGET_COLUMN = "noise"

@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from collections.abc import Mapping, Sequence
 from dataclasses import dataclass
+from typing import Any, Literal, cast
 
 import pandas as pd
 from sklearn.base import BaseEstimator, clone
@@ -22,17 +23,15 @@ from sklearn.metrics import (
 )
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder, RobustScaler
-from typing import Any, cast, Literal, TypeAlias
 from xgboost import XGBClassifier
 
 from team_blue.features import CATEGORICAL_FEATURE_COLUMNS
 
+type ModelName = Literal["logistic", "xgboost"]
+type ModelParameter = float | int | str | None
 
-ModelName: TypeAlias = Literal["logistic", "xgboost"]
-ModelParameter: TypeAlias = float | int | str | None
-
-LogisticPenalty: TypeAlias = Literal["l1", "l2"]
-LogisticClassWeight: TypeAlias = Literal["balanced"] | None
+type LogisticPenalty = Literal["l1", "l2"]
+type LogisticClassWeight = Literal["balanced"] | None
 
 
 @dataclass(frozen=True)
