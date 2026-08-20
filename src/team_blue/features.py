@@ -161,6 +161,7 @@ def _subscription_continuity(invoice_data: pd.DataFrame) -> pd.DataFrame:
 
 
 def _product_presence(invoice_data: pd.DataFrame) -> pd.DataFrame:
+    """Create product-presence features"""
     presence = pd.crosstab(
         invoice_data[CUSTOMER_ID_COLUMN],
         invoice_data["PRODUCT_SUBCATEGORY"],
@@ -177,7 +178,8 @@ def build_customer_features(
     *,
     include_target: bool,
 ) -> pd.DataFrame:
-    """Aggregate invoice-product observations to one row per customer.
+    """
+    Aggregate invoice-product observations to one row per customer.
 
     The input should already have passed through ``clean_training_data`` (for
     training) or validation in ``load_datasets``. Dates remain metadata for
